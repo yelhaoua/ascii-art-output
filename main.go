@@ -11,8 +11,15 @@ func main() {
 	if len(os.Args) > 4 || len(os.Args) == 1 {
 		return
 	}
-
-	Content := asciiart.Splite("standard")
-	asciiart.PrintSymbole(Content, os.Args[1])
+	if len(os.Args) == 2 {
+		Content := asciiart.Splite("standard")
+		asciiart.PrintSymbole(Content, os.Args[1])
+	} else if len(os.Args) == 3 {
+		Content := asciiart.Splite(os.Args[2])
+		asciiart.PrintSymbole(Content, os.Args[1])
+	} else if len(os.Args) == 4 {
+		Content := asciiart.Splite(os.Args[3])
+		asciiart.PrintSymbole(Content, os.Args[2])
+	}
 
 }
