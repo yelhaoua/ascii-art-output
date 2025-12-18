@@ -18,8 +18,7 @@ func main() {
 		Content := asciiart.Splite(os.Args[2])
 		asciiart.PrintSymbole(Content, os.Args[1])
 	} else if len(os.Args) == 4 {
-		Content := asciiart.Splite(os.Args[3])
-		asciiart.PrintSymbole(Content, os.Args[2])
+		asciiart.PrintInFile(os.Args[1], os.Args[2], os.Args[3])
 	}
 
 }

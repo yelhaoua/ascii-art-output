@@ -5,13 +5,8 @@ import (
 	"strings"
 )
 
-// func SaveFile(text , name string){
-
-// }
-
 func Output(str string, array [][]string) {
-	// out := ""
-	// start looping to8 the hieght of line
+	// Start looping through the height of the symbols
 	for i := 0; i < 8; i++ {
 		for _, fin := range str {
 			// skip the unprintibal chachacters
@@ -21,11 +16,9 @@ func Output(str string, array [][]string) {
 			// out += array[int(rune(fin)-32)][i]
 			fmt.Print(array[int(rune(fin)-32)][i])
 		}
-		// out += "\n"
 		fmt.Println()
 	}
-	// SaveFile(out, name)
-	// out = ""
+	
 }
 
 func PrintSymbole(array [][]string, word string) {
