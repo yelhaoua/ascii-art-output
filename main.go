@@ -26,7 +26,7 @@ func main() {
 		Content := asciiart.Splite(os.Args[2])
 		fmt.Print(asciiart.PrintSymbole(Content, os.Args[1]))
 	} else if len(os.Args) == 4 {
-		if strings.HasSuffix(os.Args[1], ".txt") && strings.HasPrefix(os.Args[1], "--output=") && os.Args[2] != "" || os.Args[3] != "" {
+		if strings.HasSuffix(strings.TrimSpace(os.Args[1]), ".txt") && strings.HasPrefix(strings.TrimSpace(os.Args[1]), "--output=") && os.Args[2] != "" || os.Args[3] != "" {
 			asciiart.PrintInFile(os.Args[1], os.Args[2], os.Args[3])
 		} else {
 			printErr()
