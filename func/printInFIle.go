@@ -1,5 +1,7 @@
 package asciiart
 
-func PrintInFile(outputName string, word string, fileName string) {
+import "fmt"
 
+func PrintInFile(outputName string, word string, fileName string) {
+	fmt.Println(outputName)
 }
