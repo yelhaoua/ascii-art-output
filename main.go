@@ -26,8 +26,12 @@ func main() {
 		Content := asciiart.Splite(os.Args[2])
 		fmt.Print(asciiart.PrintSymbole(Content, os.Args[1]))
 	} else if len(os.Args) == 4 {
-		if strings.HasSuffix(strings.TrimSpace(os.Args[1]), ".txt") && strings.HasPrefix(strings.TrimSpace(os.Args[1]), "--output=") && os.Args[2] != "" || os.Args[3] != "" {
-			asciiart.PrintInFile(os.Args[1], os.Args[2], os.Args[3])
+		if strings.HasSuffix(os.Args[1], ".txt") && strings.HasPrefix(os.Args[1], "--output=") && os.Args[2] != "" {
+			if os.Args[3] == "" {
+				asciiart.PrintInFile(os.Args[1], os.Args[2], "standard")
+			} else {
+				asciiart.PrintInFile(os.Args[1], os.Args[2], os.Args[3])
+			}
 		} else {
 			printErr()
 		}
@@ -35,5 +39,5 @@ func main() {
 }
 
 func printErr() {
-	fmt.Println("Usage: go run . [STRING]\n\nEX: go run .  something ")
+	fmt.Println("Usage: go run . [OPTION] [STRING] [BANNER]\n\nEX: go run .  something ")
 }
